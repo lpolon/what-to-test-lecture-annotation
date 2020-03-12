@@ -1,4 +1,5 @@
-class Wheel {
+// Incoming query messages:
+export const Wheel = class {
   constructor(rim, tire) {
     this.rim = rim;
     this.tire = tire;
@@ -7,10 +8,20 @@ class Wheel {
   get diameter() {
     return this.rim + this.tire * 2;
   }
-}
+};
 
-Wheel;
+export const Gear = class {
+  constructor(chainring, cog, wheel) {
+    this.chainring = chainring;
+    this.cog = cog;
+    this.wheel = wheel;
+  }
 
-const aWheel = new Wheel(1, 2);
+  _ratio() {
+    return (this.chainring / this.cog);
+  }
 
-console.log(aWheel.diameter);
+  gearInches() {
+    return this._ratio() * this.wheel.diameter;
+  }
+};
