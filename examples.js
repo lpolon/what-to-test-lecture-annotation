@@ -18,10 +18,18 @@ export const Gear = class {
   }
 
   _ratio() {
-    return (this.chainring / this.cog);
+    return this.chainring / this.cog;
   }
 
   gearInches() {
     return this._ratio() * this.wheel.diameter;
+  }
+
+  /*
+  note that this is a combination of query and command, since it assings a new value to this.cog (command), but also changes what people see when they query this.cog latter
+  */
+  setCog(newCog) {
+    this.cog = newCog;
+    return this.cog;
   }
 };

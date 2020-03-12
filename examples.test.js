@@ -20,4 +20,13 @@ describe('Gear test', () => {
 
     expect(gear.gearInches()).toBeCloseTo(137.1, 1);
   });
+  // incoming command messages:
+  /*
+  test incoming command messages by making assertions about direct public side effects
+  */
+  it('sets cog value', () => {
+    const gear = new Gear();
+    const newCogValue = gear.setCog(27); // send the message
+    expect(newCogValue).toBe(27); // assert the side effect
+  });
 });
