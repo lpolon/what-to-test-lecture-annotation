@@ -21,10 +21,29 @@ These messages can have two flavours types: queries and commands.
 
 - both: changes with unexpeted side-effects! It might be necessary: popping something out of a queue.
 
-### They are tested differently:
+### part one: incoming
 | Message \ Type | Query | Command |
-| :--- |:---:|:---:|
-| Incoming | Assert result |
+| :--- |:---|:---|
+| Incoming | Assert:<br>result | Assert:<br>direct public* side effects |
 | Sent to Self
 | Outgoing
 |
+
+// TODO: \* responsibility of the last ruby class involved. More on that later...
+
+Sandi:
+At this point i can reveal a magical secret:
+we're done making assertions about values.
+
+DRY it out:
+- Receiver of incoming message has sole responsibility for asserting the result direct public side effects. in other words: when you are unit testing, the receiver of incoming values is in the place to make assertions about values. You do that here and nowhere else.
+
+### part two: to self
+
+| Message \ Type | Query | Command |
+| :--- |:---|:---|
+| Incoming | Assert:<br>result | Assert:<br>direct public* side effects |
+| Sent to Self
+| Outgoing
+|
+
