@@ -1,7 +1,8 @@
 # Introduction
 
-This repo is some annotations about what should be unit tested [based on this talk by Sandi Metz](https://www.youtube.com/watch?v=URSWYvyc42M) as recommended by [Testing basics @ theOdinProject](https://www.theodinproject.com/courses/javascript/lessons/testing-basics).
+Annotations about what should be unit tested [based on this talk by Sandi Metz](https://www.youtube.com/watch?v=URSWYvyc42M) as recommended by [Testing basics @ theOdinProject](https://www.theodinproject.com/courses/javascript/lessons/testing-basics).
 
+example.js and example.test.js has most of the lecturer done with jest.
 # what should you unit test?
 
 It is usually feels like a big spagetti and it is very hard to tell about all side effects a change can cause.
