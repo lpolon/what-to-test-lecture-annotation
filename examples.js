@@ -17,6 +17,7 @@ export const Gear = class {
     this.wheel = wheel;
   }
 
+  // in the lecturer example, this method is private.
   _ratio() {
     return this.chainring / this.cog;
   }
