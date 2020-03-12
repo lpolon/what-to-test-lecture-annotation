@@ -52,4 +52,12 @@ describe('Gear test', () => {
     gear.gearInches();
     expect(spyGetRatio).toHaveBeenCalled();
   });
+  it('checks wheel diameter', () => {
+    const wheel = new Wheel(26, 1.5);
+    const gear = new Gear(52, 11, wheel);
+
+    const wheelDiameter = gear.wheel.diameter;
+
+    expect(wheelDiameter).toBe(29);
+  });
 });
